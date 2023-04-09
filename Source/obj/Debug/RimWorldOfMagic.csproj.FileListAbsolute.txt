@@ -1,0 +1,6 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM2\Assemblies\RimWorldOfMagic.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM2\Assemblies\RimWorldOfMagic.pdb
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM2\Source\obj\Debug\RimWorldOfMagic.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM2\Source\obj\Debug\RimWorldOfMagic.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM2\Source\obj\Debug\RimWorldOfMagic.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\RWoM2\Source\obj\Debug\RimWorldOfMagic.pdb

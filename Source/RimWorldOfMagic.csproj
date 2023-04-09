@@ -51,7 +51,9 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Abilities\Abstract\Ability_InaccurateProjectile.cs" />
         <Compile Include="Abilities\FireMage\Fireball.cs" />
+        <Compile Include="AbilityExtensions\AbilityExtension_InaccurateProjectile.cs" />
         <Compile Include="Debug.cs" />
         <Compile Include="DefOf.cs" />
         <Compile Include="RimWorldOfMagic.cs" />

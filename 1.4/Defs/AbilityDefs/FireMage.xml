@@ -7,16 +7,22 @@
     <description>Throws a massive, slow moving fireball. Wreaks havoc and creates a fiery explosion at the target area.</description>
     <iconPath>Spells/fireball4</iconPath>
     <abilityClass>RimWorldOfMagic.Abilities.FireMage.Fireball</abilityClass>
-    <castTime>1.5</castTime>
+    <castTime>90</castTime>
     <range>120</range>
     <radius>8.4</radius>
-    <targetMode>Location</targetMode>
-    <warmupSound>DropPod_Leaving</warmupSound>
+    <targetingParameters>
+        <canTargetLocations>true</canTargetLocations>
+        <canTargetPawns>true</canTargetPawns>
+        <canTargetBuildings>true</canTargetBuildings>
+    </targetingParameters>
     <castSound>GunTail_Medium</castSound>
     <modExtensions>
         <li Class="VFECore.Abilities.AbilityExtension_Projectile">
           <projectile>RWoM_Projectile_Fireball</projectile>
         </li>
-      </modExtensions>
+        <li Class="RimWorldOfMagic.AbilityExtensions.AbilityExtension_InaccurateProjectile">
+            <forcedMissRadius>8.4</forcedMissRadius>
+        </li>
+    </modExtensions>
 </VFECore.Abilities.AbilityDef>
 </Defs>

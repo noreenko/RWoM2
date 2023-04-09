@@ -10,12 +10,15 @@
         <graphicClass>Graphic_Single</graphicClass>
         <shaderType>TransparentPostLight</shaderType>
     </graphicData>
+    <drawOffscreen>true</drawOffscreen>
+    <drawerType>RealtimeOnly</drawerType>
     <projectile>
         <damageDef>Bomb</damageDef>
         <damageAmountBase>40</damageAmountBase>
         <speed>20</speed>
         <explosionRadius>3.6</explosionRadius>
         <postExplosionSpawnChance>1</postExplosionSpawnChance>
+        <alwaysFreeIntercept>true</alwaysFreeIntercept>
     </projectile>
 </ThingDef>
 </Defs>
