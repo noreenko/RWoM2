@@ -1,0 +1,19 @@
+<Defs>
+<ThingDef ParentName="BaseBullet" Class="VFECore.Abilities.AbilityProjectile">
+    <defName>RWoM_Projectile_Fireball</defName>
+    <label>Fireball</label>
+    <thingClass>Projectile_Explosive</thingClass>
+    <graphicData>
+        <texPath>Spells/fireball4</texPath>
+        <graphicClass>Graphic_Single</graphicClass>
+        <shaderType>TransparentPostLight</shaderType>
+    </graphicData>
+    <projectile>
+        <damageDef>Bomb</damageDef>
+        <damageAmountBase>40</damageAmountBase>
+        <speed>20</speed>
+        <explosionRadius>3.6</explosionRadius>
+        <postExplosionSpawnChance>1</postExplosionSpawnChance>
+    </projectile>
+</ThingDef>
+</Defs>
