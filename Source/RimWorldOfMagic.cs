@@ -12,6 +12,11 @@ public class RimWorldOfMagic : Mod
     {
         settings = GetSettings<RimWorldOfMagicSettings>();
     }
+
+    public override string SettingsCategory()
+    {
+        return "RimWorld of Magic".Translate();
+    }
 }
 
 public class RimWorldOfMagicSettings : ModSettings

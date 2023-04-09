@@ -18,7 +18,7 @@
         <DebugSymbols>true</DebugSymbols>
         <DebugType>full</DebugType>
         <Optimize>true</Optimize>
-        <OutputPath>../../Assemblies</OutputPath>
+        <OutputPath>../Assemblies</OutputPath>
         <DefineConstants>DEBUG;TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
@@ -27,15 +27,12 @@
         <PlatformTarget>AnyCPU</PlatformTarget>
         <DebugType>pdbonly</DebugType>
         <Optimize>true</Optimize>
-        <OutputPath>../../Assemblies</OutputPath>
+        <OutputPath>../Assemblies</OutputPath>
         <DefineConstants>TRACE</DefineConstants>
         <ErrorReport>prompt</ErrorReport>
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="0PrepatcherAPI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>packages\Zetrith.Prepatcher.1.1.1\lib\net472\0PrepatcherAPI.dll</HintPath>
-        </Reference>
         <Reference Include="Assembly-CSharp">
           <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
           <Private>False</Private>
@@ -50,18 +47,15 @@
         </Reference>
         <Reference Include="VFECore">
           <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.4\Assemblies\VFECore.dll</HintPath>
+          <Private>False</Private>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="CompAbilities.cs" />
-        <Compile Include="Core\Ability.cs" />
-        <Compile Include="Core\AbilityDef.cs" />
+        <Compile Include="Abilities\FireMage\Fireball.cs" />
         <Compile Include="Debug.cs" />
+        <Compile Include="DefOf.cs" />
         <Compile Include="RimWorldOfMagic.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

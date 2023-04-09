@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Defs>
-    <RimWorldOfMagic.Core.AbilityDef Name="RWoM_AbilityDef_Base" Abstract="true">
+    <VFECore.Abilities.AbilityDef Name="RWoM_AbilityDef_Base" Abstract="true">
         <!-- 
         <warmupSound>VPE_PsycastCastingEffect</warmupSound>
         <warmupMote>VPE_Mote_CastPsycast</warmupMote>
@@ -9,5 +9,5 @@
         <cooldownTime>120</cooldownTime> 
 		<rangeRingColor>(1, 1, 1)</rangeRingColor>
 		<radiusRingColor>(0.3, 0.8, 1)</radiusRingColor>
-    </RimWorldOfMagic.Core.AbilityDef>
+    </VFECore.Abilities.AbilityDef>
 </Defs>

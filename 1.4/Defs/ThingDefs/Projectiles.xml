@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
 <Defs>
-<ThingDef ParentName="BaseBullet" Class="VFECore.Abilities.AbilityProjectile">
+<ThingDef ParentName="BaseBullet">
     <defName>RWoM_Projectile_Fireball</defName>
     <label>Fireball</label>
     <thingClass>Projectile_Explosive</thingClass>
