@@ -3,9 +3,9 @@ using RimWorldOfMagic.AbilityExtensions;
 using Verse;
 using VFECore.Abilities;
 
-namespace RimWorldOfMagic.Abilities.Abstract;
+namespace RimWorldOfMagic.Abilities.Common;
 
-public class Ability_InaccurateProjectile : Ability_ShootProjectile
+public class InaccurateProjectile : Ability_ShootProjectile
 {
     public override void Cast(params GlobalTargetInfo[] targets)
     {

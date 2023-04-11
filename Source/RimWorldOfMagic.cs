@@ -15,7 +15,7 @@ public class RimWorldOfMagic : Mod
 
     public override string SettingsCategory()
     {
-        return "RimWorld of Magic".Translate();
+        return "RimWorld of Magic";
     }
 }
 

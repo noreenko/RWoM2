@@ -20,7 +20,7 @@
         <li Class="VFECore.Abilities.AbilityExtension_Projectile">
           <projectile>RWoM_Projectile_Fireball</projectile>
         </li>
-        <li Class="RimWorldOfMagic.AbilityExtensions.AbilityExtension_InaccurateProjectile">
+        <li Class="RimWorldOfMagic.Abilities.AbilityExtensions.InaccurateProjectile">
             <forcedMissRadius>8.4</forcedMissRadius>
         </li>
     </modExtensions>
