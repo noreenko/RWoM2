@@ -2,7 +2,7 @@
 
 <Defs>
 <VFECore.Abilities.AbilityDef ParentName="RWoM_AbilityDef_Base">
-    <defName>Fireball</defName>
+    <defName>RWoM_Ability_Fireball</defName>
     <label>Fireball</label>
     <description>Throws a massive, slow moving fireball. Wreaks havoc and creates a fiery explosion at the target area.</description>
     <iconPath>Spells/fireball4</iconPath>
