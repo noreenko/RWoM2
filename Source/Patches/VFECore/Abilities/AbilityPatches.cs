@@ -45,14 +45,15 @@ public class AbilityUpgrade
 public static class AbilityPatches
 {
     [PrepatcherField]
-    [Prepatcher.DefaultValue(typeof(List<AbilityUpgrade>))]
     public static extern ref List<AbilityUpgrade> upgrades(this Ability target);
+    public static List<AbilityUpgrade> Upgrades(this Ability target) =>
+        target.upgrades() ??= new List<AbilityUpgrade>();
 
     private static AbilityUpgrade GetUpgradeOrNullUpgrade(this Ability target, string label)
     {
-        for (int i = 0; i < target.upgrades().Count; i++)
+        for (int i = 0; i < target.Upgrades().Count; i++)
         {
-            if (target.upgrades()[i].label == label) return target.upgrades()[i];
+            if (target.Upgrades()[i].label == label) return target.Upgrades()[i];
         }
         return AbilityUpgrade.Null;
     }
@@ -69,6 +70,11 @@ public static class AbilityPatches
     [PrepatcherField]
     private static extern ref AbilityUpgrade versatility(this Ability target);
     public static AbilityUpgrade Versatility(this Ability target) => target.versatility() ??= target.GetUpgradeOrNullUpgrade("Versatility");
+
+    [PrepatcherField]
+    private static extern ref AbilityUpgrade level(this Ability target);
+    public static AbilityUpgrade Level(this Ability target) => target.level() ??= target.GetUpgradeOrNullUpgrade("Level");
+
 }
 
 // ===== Harmony Patches ==============================================================================================

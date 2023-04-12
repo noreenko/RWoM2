@@ -37,8 +37,8 @@
           <HintPath>..\..\..\..\..\workshop\content\294100\2934420800\Assemblies\0Harmony.dll</HintPath>
           <Private>False</Private>
         </Reference>
-        <Reference Include="0PrepatcherAPI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
-          <HintPath>packages\Zetrith.Prepatcher.1.1.1\lib\net472\0PrepatcherAPI.dll</HintPath>
+        <Reference Include="0PrepatcherAPI">
+          <HintPath>..\..\Prepatcher\Assemblies\0PrepatcherAPI.dll</HintPath>
           <Private>False</Private>
         </Reference>
         <Reference Include="Assembly-CSharp">
@@ -74,10 +74,6 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Abilities\AbilityExtensions" />
-      <Folder Include="Abilities\Common" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

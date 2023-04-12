@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+    <MentalStateDef Abstract="True" Name="RWoM_BaseMentalState">
+        <minTicksBeforeRecovery>900</minTicksBeforeRecovery>
+        <recoveryMtbDays>0.15</recoveryMtbDays>
+    </MentalStateDef>
+
+    <MentalBreakDef>
+        <defName>RWoM_PanicFlee</defName>
+        <mentalState>RWoM_PanicFlee</mentalState>
+        <baseCommonality>.1</baseCommonality>
+        <intensity>Major</intensity>
+    </MentalBreakDef>
+    <MentalStateDef ParentName="RWoM_BaseMentalState">
+        <defName>RWoM_PanicFlee</defName>
+        <label>panic fleeing</label>
+        <stateClass>MentalState_PanicFlee</stateClass>
+        <category>Misc</category>
+        <nameColor>(0.65, 0.9, 0.93)</nameColor>
+        <minTicksBeforeRecovery>240</minTicksBeforeRecovery>
+        <maxTicksBeforeRecovery>420</maxTicksBeforeRecovery>
+        <baseInspectLine>Mental state: Fleeing in panic</baseInspectLine>
+        <blockNormalThoughts>true</blockNormalThoughts>
+        <unspawnedNotInCaravanCanDo>false</unspawnedNotInCaravanCanDo>
+    </MentalStateDef>
+</Defs>

@@ -19,7 +19,7 @@
         <explosionRadius>3.6</explosionRadius>
         <postExplosionSpawnChance>1</postExplosionSpawnChance>
         <explosionDamageFalloff>true</explosionDamageFalloff>
-        <explosionChanceToStartFire>.05f</explosionChanceToStartFire>
+        <explosionChanceToStartFire>.05</explosionChanceToStartFire>
     </projectile>
 </ThingDef>
 </Defs>
