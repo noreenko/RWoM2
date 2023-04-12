@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using RimWorld;
 using Verse;
 using VFECore.Abilities;
+using AbilityDef=VFECore.Abilities.AbilityDef;
+using Verb_CastAbility=VFECore.Abilities.Verb_CastAbility;
 
 namespace RimWorldOfMagic;
 

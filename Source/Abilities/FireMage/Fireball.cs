@@ -1,7 +1,8 @@
-﻿using RimWorldOfMagic.Abilities.Common;
+﻿using VFECore.Abilities;
 
 namespace RimWorldOfMagic.Abilities.FireMage;
 
-public class Fireball : InaccurateProjectile
+public class Fireball : Ability_ShootProjectile
 {
+
 }

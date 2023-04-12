@@ -9,7 +9,7 @@
     <abilityClass>RimWorldOfMagic.Abilities.FireMage.Fireball</abilityClass>
     <castTime>90</castTime>
     <range>120</range>
-    <radius>8.4</radius>
+    <radius>3.6</radius>
     <targetingParameters>
         <canTargetLocations>true</canTargetLocations>
         <canTargetPawns>true</canTargetPawns>
@@ -19,9 +19,6 @@
     <modExtensions>
         <li Class="VFECore.Abilities.AbilityExtension_Projectile">
           <projectile>RWoM_Projectile_Fireball</projectile>
-        </li>
-        <li Class="RimWorldOfMagic.Abilities.AbilityExtensions.InaccurateProjectile">
-            <forcedMissRadius>8.4</forcedMissRadius>
         </li>
     </modExtensions>
 </VFECore.Abilities.AbilityDef>

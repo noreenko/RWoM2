@@ -54,11 +54,14 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Abilities\AbilityExtensions\InaccurateProjectile.cs" />
-        <Compile Include="Abilities\Common\InaccurateProjectile.cs" />
+        <Compile Include="Abilities\AbilityExtensions\Upgrade.cs" />
+        <Compile Include="Abilities\Common\Ability.cs" />
+        <Compile Include="Abilities\Common\AbilitySkill.cs" />
         <Compile Include="Abilities\FireMage\Fireball.cs" />
         <Compile Include="Debug.cs" />
         <Compile Include="DefOf.cs" />
+        <Compile Include="Patches\VFECore\Abilities\AbilityPatches.cs" />
+        <Compile Include="Patches\VFECore\Abilities\CompAbilitiesPatches.cs" />
         <Compile Include="RimWorldOfMagic.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>

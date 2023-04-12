@@ -18,7 +18,6 @@
         <speed>20</speed>
         <explosionRadius>3.6</explosionRadius>
         <postExplosionSpawnChance>1</postExplosionSpawnChance>
-        <alwaysFreeIntercept>true</alwaysFreeIntercept>
     </projectile>
 </ThingDef>
 </Defs>
