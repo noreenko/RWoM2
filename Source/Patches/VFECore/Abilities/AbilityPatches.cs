@@ -7,8 +7,8 @@ using VFECore.Abilities;
 namespace RimWorldOfMagic.Patches.VFECore.Abilities;
 
 /*
- * An AbilitySkill is a collection of attributes on an ability that define how an ability
- * can be upgraded. The actual implementation of the skill would be found in the ability, projectile, etc.
+ * An AbilityUpgrade is a collection of attributes on an ability that define how an ability
+ * can be upgraded. The actual implementation of the upgrade would be found in the ability, projectile, etc.
  */
 public class AbilityUpgrade
 {
