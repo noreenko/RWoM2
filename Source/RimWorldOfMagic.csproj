@@ -35,6 +35,7 @@
     <ItemGroup>
         <Reference Include="0Harmony">
           <HintPath>..\..\..\..\..\workshop\content\294100\2934420800\Assemblies\0Harmony.dll</HintPath>
+          <Private>False</Private>
         </Reference>
         <Reference Include="0PrepatcherAPI, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
           <HintPath>packages\Zetrith.Prepatcher.1.1.1\lib\net472\0PrepatcherAPI.dll</HintPath>
