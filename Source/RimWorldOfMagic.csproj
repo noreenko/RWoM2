@@ -58,7 +58,6 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Abilities\AbilityExtensions\Upgrade.cs" />
         <Compile Include="Abilities\FireMage\Fireball.cs" />
         <Compile Include="Debug.cs" />
         <Compile Include="DefOf.cs" />
@@ -71,7 +70,9 @@
       <None Include="packages.config" />
     </ItemGroup>
     <ItemGroup>
+      <Folder Include="Abilities\AbilityExtensions" />
       <Folder Include="Abilities\Common" />
+      <Folder Include="ThingDefs\Projectiles" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

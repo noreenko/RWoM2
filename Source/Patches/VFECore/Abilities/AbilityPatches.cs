@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using HarmonyLib;
 using Prepatcher;
 using Verse;
@@ -12,14 +10,14 @@ namespace RimWorldOfMagic.Patches.VFECore.Abilities;
  * An AbilitySkill is a collection of attributes on an ability that define how an ability
  * can be upgraded. The actual implementation of the skill would be found in the ability, projectile, etc.
  */
-public class AbilitySkill
+public class AbilityUpgrade
 {
     public string label;  // When left empty, it assumes there is no skill
     public int value;  // What level the AbilitySkill is actually on (how many times upgraded)
     public int costToUpgrade;  // How many points to upgrade value
     public int maxValue;  // How high can value go
 
-    public AbilitySkill(string label, int costToUpgrade = 1, int maxValue = 3)
+    private AbilityUpgrade(string label, int costToUpgrade = 1, int maxValue = 3)
     {
         this.label = label;
         this.costToUpgrade = costToUpgrade;
@@ -27,7 +25,7 @@ public class AbilitySkill
     }
 
     // Used to verify there is no ability skill with label
-    public static AbilitySkill Null = new AbilitySkill(string.Empty);
+    public static AbilityUpgrade Null = new AbilityUpgrade(string.Empty);
 
     // TODO: Implement
     public bool canUpgrade(CompAbilities compAbilities)
@@ -47,30 +45,30 @@ public class AbilitySkill
 public static class AbilityPatches
 {
     [PrepatcherField]
-    [Prepatcher.DefaultValue(typeof(List<AbilitySkill>))]
-    public static extern ref List<AbilitySkill> skills(this Ability target);
+    [Prepatcher.DefaultValue(typeof(List<AbilityUpgrade>))]
+    public static extern ref List<AbilityUpgrade> upgrades(this Ability target);
 
-    private static AbilitySkill GetSkillOrNullSkill(this Ability target, string label)
+    private static AbilityUpgrade GetUpgradeOrNullUpgrade(this Ability target, string label)
     {
-        for (int i = 0; i < target.skills().Count; i++)
+        for (int i = 0; i < target.upgrades().Count; i++)
         {
-            if (target.skills()[i].label == label) return target.skills()[i];
+            if (target.upgrades()[i].label == label) return target.upgrades()[i];
         }
-        return AbilitySkill.Null;
+        return AbilityUpgrade.Null;
     }
 
     // These are commonly accessed AbilitySkills, so I've added a  quicker way of accessing them
     [PrepatcherField]
-    private static extern ref AbilitySkill power(this Ability target);
-    public static AbilitySkill Power(this Ability target) => target.power() ??= target.GetSkillOrNullSkill("Power");
+    private static extern ref AbilityUpgrade power(this Ability target);
+    public static AbilityUpgrade Power(this Ability target) => target.power() ??= target.GetUpgradeOrNullUpgrade("Power");
 
     [PrepatcherField]
-    private static extern ref AbilitySkill efficiency(this Ability target);
-    public static AbilitySkill Efficiency(this Ability target) => target.efficiency() ??= target.GetSkillOrNullSkill("Efficiency");
+    private static extern ref AbilityUpgrade efficiency(this Ability target);
+    public static AbilityUpgrade Efficiency(this Ability target) => target.efficiency() ??= target.GetUpgradeOrNullUpgrade("Efficiency");
 
     [PrepatcherField]
-    private static extern ref AbilitySkill versatility(this Ability target);
-    public static AbilitySkill Versatility(this Ability target) => target.versatility() ??= target.GetSkillOrNullSkill("Versatility");
+    private static extern ref AbilityUpgrade versatility(this Ability target);
+    public static AbilityUpgrade Versatility(this Ability target) => target.versatility() ??= target.GetUpgradeOrNullUpgrade("Versatility");
 }
 
 // ===== Harmony Patches ==============================================================================================
@@ -80,6 +78,6 @@ public class AbilityPostExposeData_Patch
 {
     private static void Postfix(Ability __instance)
     {
-        Scribe_Collections.Look(ref __instance.skills(),"RWoM_skills", LookMode.Deep);
+        Scribe_Collections.Look(ref __instance.upgrades(),"RWoM_upgrades", LookMode.Deep);
     }
 }
