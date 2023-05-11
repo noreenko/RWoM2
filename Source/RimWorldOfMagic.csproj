@@ -63,9 +63,11 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Abilities\FireMage\Fireball.cs" />
+        <Compile Include="AbilityExtensions\RandomDamageMultiplier.cs" />
         <Compile Include="Debug.cs" />
         <Compile Include="DefOf.cs" />
+        <Compile Include="Patches\HarmonyPatchStarter.cs" />
+        <Compile Include="Patches\VFECore\Abilities\AbilityDefPatches.cs" />
         <Compile Include="Patches\VFECore\Abilities\AbilityPatches.cs" />
         <Compile Include="Patches\VFECore\Abilities\CompAbilitiesPatches.cs" />
         <Compile Include="RimWorldOfMagic.cs" />
@@ -74,6 +76,9 @@
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Abilities\FireMage" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
