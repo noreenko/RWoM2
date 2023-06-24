@@ -16,9 +16,9 @@
         <damageDef>Bomb</damageDef>
         <speed>20</speed>
         <explosionRadius>3.6</explosionRadius>
-        <postExplosionSpawnChance>1</postExplosionSpawnChance>
         <explosionDamageFalloff>true</explosionDamageFalloff>
-        <explosionChanceToStartFire>.05</explosionChanceToStartFire>
+        <explosionChanceToStartFire>.01</explosionChanceToStartFire>
+        <soundExplode>Explosion_Flame</soundExplode>
     </projectile>
 </ThingDef>
 </Defs>

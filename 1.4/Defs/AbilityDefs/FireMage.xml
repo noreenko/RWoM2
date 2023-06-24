@@ -16,13 +16,13 @@
         <canTargetPawns>true</canTargetPawns>
         <canTargetBuildings>true</canTargetBuildings>
     </targetingParameters>
-    <castSound>GunTail_Medium</castSound>
+    <castSound>DropPod_Leaving</castSound>
     <modExtensions>
         <li Class="VFECore.Abilities.AbilityExtension_Projectile">
           <projectile>RWoM_Projectile_Fireball</projectile>
         </li>
-        <li Class="RimWorldOfMagic.AbilityExtensions.RandomDamageMultiplier">
-            <min>0.5</min>
+        <li Class="VFECore.Abilities.AbilityExtension_RandomPowerMultiplier">
+            <range>0.5~1.0</range>
         </li>
     </modExtensions>
 </VFECore.Abilities.AbilityDef>

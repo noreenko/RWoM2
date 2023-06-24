@@ -63,12 +63,21 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="AbilityExtensions\RandomDamageMultiplier.cs" />
+        <Compile Include="Core\Abilities\Ability_ShootProjectile.cs" />
+        <Compile Include="Core\Ability.cs" />
+        <Compile Include="Core\AbilityDef.cs" />
+        <Compile Include="Core\AbilityProjectile.cs" />
+        <Compile Include="Core\AbilityUpgrade.cs" />
+        <Compile Include="Core\AbilityUpgradeDefBase.cs" />
+        <Compile Include="Core\AbilityUpgradeTracker.cs" />
+        <Compile Include="Core\CompAbilities.cs" />
         <Compile Include="Debug.cs" />
         <Compile Include="DefOf.cs" />
+        <Compile Include="ModExtensions\AbilityProjectile\AbilityProjectileModExtension.cs" />
+        <Compile Include="ModExtensions\AbilityProjectile\ScatterBomb.cs" />
+        <Compile Include="ModExtensions\AbilityProjectile\ScatterBombUpgradeTracker.cs" />
         <Compile Include="Patches\HarmonyPatchStarter.cs" />
         <Compile Include="Patches\VFECore\Abilities\AbilityDefPatches.cs" />
-        <Compile Include="Patches\VFECore\Abilities\AbilityPatches.cs" />
         <Compile Include="Patches\VFECore\Abilities\CompAbilitiesPatches.cs" />
         <Compile Include="RimWorldOfMagic.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
