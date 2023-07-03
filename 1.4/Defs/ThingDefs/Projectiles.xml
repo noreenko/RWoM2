@@ -4,7 +4,7 @@
 <ThingDef ParentName="BaseBullet">
     <defName>RWoM_Projectile_Fireball</defName>
     <label>Fireball</label>
-    <thingClass>RimWorldOfMagic.ThingDefs.Projectiles.Fireball</thingClass>
+    <thingClass>RimWorldOfMagic.Core.AbilityProjectile</thingClass>
     <graphicData>
         <texPath>Spells/fireball4</texPath>
         <graphicClass>Graphic_Single</graphicClass>
@@ -20,5 +20,16 @@
         <explosionChanceToStartFire>.01</explosionChanceToStartFire>
         <soundExplode>Explosion_Flame</soundExplode>
     </projectile>
+    <modExtensions>
+            <li Class="RimWorldOfMagic.ModExtensions.AbilityProjectile.ScatterBomb">
+                <quantity>5</quantity>
+                <power>1</power>
+                <radius>4</radius>
+                <explosionRadius>2.2</explosionRadius>
+                <damageDef>RWoM_Fireball</damageDef>
+                <chanceToStartFire>0.05</chanceToStartFire>
+                <damageFalloff>true</damageFalloff>
+            </li>
+    </modExtensions>
 </ThingDef>
 </Defs>

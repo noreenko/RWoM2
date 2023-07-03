@@ -10,7 +10,7 @@
     <castTime>90</castTime>
     <range>120</range>
     <radius>3.6</radius>
-    <power>40</power>
+    <power>0</power>
     <targetingParameters>
         <canTargetLocations>true</canTargetLocations>
         <canTargetPawns>true</canTargetPawns>

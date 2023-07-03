@@ -78,13 +78,13 @@
         <Compile Include="Debug.cs" />
         <Compile Include="DefOf.cs" />
         <Compile Include="ModExtensions\AbilityModExtension.cs" />
+        <Compile Include="ModExtensions\AbilityProjectile\IAbilityProjectileModExtension.cs" />
         <Compile Include="ModExtensions\AbilityProjectile\ScatterBomb.cs" />
         <Compile Include="Patches\HarmonyPatchStarter.cs" />
         <Compile Include="Patches\VFECore\Abilities\AbilityDefPatches.cs" />
         <Compile Include="Patches\VFECore\Abilities\CompAbilitiesPatches.cs" />
         <Compile Include="RimWorldOfMagic.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="ThingDefs\Projectiles\Fireball.cs" />
     </ItemGroup>
     <ItemGroup>
       <None Include="packages.config" />

@@ -1,4 +1,6 @@
-﻿namespace RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
+﻿using System;
+
+namespace RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
 
 /*
  * Tracks upgrades to any kind of explosion. These can be the ability if it is
@@ -6,20 +8,42 @@
  */
 public class ExplosionTracker : Tracker<Explosion_AbilityUpgradeDef>
 {
+    public int quantityOffset;  // quantity is included to not have to look up multiple trackers. Not always used.
+    public float quantityMultiplier = 1f;
+    public float powerOffset;
+    public float powerMultiplier = 1f;
     public float radiusOffset;
     public float radiusMultiplier = 1f;
+    public float explosionRadiusOffset;
+    public float explosionRadiusMultiplier = 1f;
     public float armorPenetrationOffset;
     public float armorPenetrationMultiplier = 1f;
     public float postExplosionSpawnChanceOffset;
     public float postExplosionSpawnChanceMultiplier = 1f;
     public int postExplosionSpawnThingCountOffset;
-    public int postExplosionSpawnThingCountMultiplier = 1;
+    public float postExplosionSpawnThingCountMultiplier = 1f;
     public float preExplosionSpawnChanceOffset;
     public float preExplosionSpawnChanceMultiplier = 1f;
     public int preExplosionSpawnThingCountOffset;
-    public int preExplosionSpawnThingCountMultiplier = 1;
+    public float preExplosionSpawnThingCountMultiplier = 1f;
     public float chanceToStartFireOffset;
     public float chanceToStartFireMultiplier = 1f;
+
+    public int GetQuantity(int quantity) => (int)Math.Round((quantity + quantityOffset) * quantityMultiplier);
+    // Power is more complicated and requires info from AbilityDef
+    public float GetExplosionRadius(float explosionRadius) =>
+        (explosionRadius + explosionRadiusOffset) * explosionRadiusMultiplier;
+    public float GetArmorPenetration(float armorPenetration) =>
+        (armorPenetration + armorPenetrationOffset) * armorPenetrationMultiplier;
+    public float GetPostExplosionSpawnChance(float chance) =>
+        (chance + postExplosionSpawnChanceOffset) * postExplosionSpawnChanceMultiplier;
+    public int GetPostExplosionSpawnThingCount(int count) =>
+        (int)Math.Round((count + postExplosionSpawnThingCountOffset) * postExplosionSpawnThingCountMultiplier);
+    public float GetPreExplosionSpawnChance(float chance) =>
+        (chance + preExplosionSpawnChanceOffset) * preExplosionSpawnChanceMultiplier;
+    public int GetPreExplosionSpawnThingCount(int count) =>
+        (int)Math.Round((count + preExplosionSpawnThingCountOffset) * preExplosionSpawnThingCountMultiplier);
+    public float GetChanceToStartFire(float chance) => (chance + chanceToStartFireOffset) * chanceToStartFireMultiplier;
 
     public virtual void UpdateTracker(Explosion_AbilityUpgradeDef def)
     {
