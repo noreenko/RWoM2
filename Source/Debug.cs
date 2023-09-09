@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using RimWorldOfMagic.Core;
 using Verse;
-using VFECore.Abilities;
-using AbilityDef=VFECore.Abilities.AbilityDef;
 
 namespace RimWorldOfMagic;
 
@@ -10,26 +10,40 @@ public class Debug
     private const string category = "RimWorld of Magic";
 
     [DebugAction(
-        category,
+        "Pawns",
+        "Give RWoM Ability...",
         actionType = DebugActionType.Action,
         allowedGameStates = AllowedGameStates.PlayingOnMap,
         displayPriority = 1000)
     ]
-    private static List<DebugActionNode> AddAbility()
+    private static void GiveRWoMAbility()
     {
-        List<DebugActionNode> debugActionList = new List<DebugActionNode>();
-        foreach (AbilityDef abilityDef in DefDatabase<AbilityDef>.AllDefs)
+        List<DebugMenuOption> list = new List<DebugMenuOption>();
+        foreach (AbilityDef def in DefDatabase<AbilityDef>.AllDefs)
         {
-            debugActionList.Add(new DebugActionNode(abilityDef.ToString(), DebugActionType.ToolMapForPawns)
-            {
-                pawnAction = pawn =>
-                {
-                    pawn.GetComp<CompAbilities>().GiveAbility(abilityDef);
-                    DebugActionsUtility.DustPuffFrom(pawn);
-                }
-            });
+            AbilityDef abilityDef = def;
+
+            list.Add(new
+                DebugMenuOption(
+                    label: abilityDef.LabelCap,
+                    mode: DebugMenuOptionMode.Tool,
+                    method: () =>
+                       {
+                           Log.Warning($"abilityDef = {abilityDef}");
+                           foreach (Pawn pawn in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>())
+                           {
+                               CompAbilities abilityComp = pawn.TryGetComp<CompAbilities>();
+                               if (abilityComp != null)
+                               {
+                                   abilityComp.GiveAbility(abilityDef);
+                                   DebugActionsUtility.DustPuffFrom(pawn);
+                               }
+                           }
+                       }
+                )
+            );
         }
 
-        return debugActionList;
+        Find.WindowStack.Add(new Dialog_DebugOptionListLister(list));
     }
 }

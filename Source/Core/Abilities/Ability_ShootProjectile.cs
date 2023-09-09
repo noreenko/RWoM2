@@ -25,7 +25,7 @@ public class Ability_ShootProjectile : Ability
         Projectile projectile = GenSpawn.Spawn(def.GetModExtension<AbilityExtension_Projectile>().projectile, pawn.Position, pawn.Map) as Projectile;
         if (projectile is AbilityProjectile abilityProjectile)
         {
-            abilityProjectile.ability = this;
+            abilityProjectile.Ability = this;
         }
         if (target.HasThing)
             projectile?.Launch(pawn, pawn.DrawPos, target.Thing, target.Thing, ProjectileHitFlags.IntendedTarget);

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 
 <Defs>
-<VFECore.Abilities.AbilityDef ParentName="RWoM_AbilityDef_Base">
+<RimWorldOfMagic.Core.AbilityDef ParentName="RWoM_AbilityDef_Base">
     <defName>RWoM_Ability_Fireball</defName>
     <label>Fireball</label>
     <description>Throws a massive, slow moving fireball. Wreaks havoc and creates a fiery explosion at the target area.</description>
     <iconPath>Spells/fireball4</iconPath>
-    <abilityClass>VFECore.Abilities.Ability_ShootProjectile</abilityClass>
+    <abilityClass>RimWorldOfMagic.Core.Abilities.Ability_ShootProjectile</abilityClass>
     <castTime>90</castTime>
     <range>120</range>
     <radius>3.6</radius>
@@ -25,5 +25,5 @@
             <range>0.5~1.0</range>
         </li>
     </modExtensions>
-</VFECore.Abilities.AbilityDef>
+</RimWorldOfMagic.Core.AbilityDef>
 </Defs>

@@ -1,8 +1,10 @@
-﻿using Verse;
+﻿using RimWorldOfMagic.Core;
+using Verse;
 
 namespace RimWorldOfMagic.ModExtensions;
 
 public class AbilityModExtension : DefModExtension
 {
-    public string upgradeExtensionKey;  // If attached to a defModExtension, this must be a unique string. Null is for direct ability upgrade
+    public string upgradeExtensionKey = "";  // If attached to a defModExtension, this must be a unique string. empty string is for base ability
+    public AbilityDef abilityDef;
 }

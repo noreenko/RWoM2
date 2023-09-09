@@ -1,104 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-    <PropertyGroup>
-        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-        <ProjectGuid>{290CF886-4242-440D-8FDB-AC95A15FE923}</ProjectGuid>
-        <OutputType>Library</OutputType>
-        <AppDesignerFolder>Properties</AppDesignerFolder>
-        <RootNamespace>RimWorldOfMagic</RootNamespace>
-        <AssemblyName>RimWorldOfMagic</AssemblyName>
-        <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-        <FileAlignment>512</FileAlignment>
-        <LangVersion>10</LangVersion>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugSymbols>true</DebugSymbols>
-        <DebugType>full</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>../Assemblies</OutputPath>
-        <DefineConstants>DEBUG;TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-        <PlatformTarget>AnyCPU</PlatformTarget>
-        <DebugType>pdbonly</DebugType>
-        <Optimize>true</Optimize>
-        <OutputPath>../Assemblies</OutputPath>
-        <DefineConstants>TRACE</DefineConstants>
-        <ErrorReport>prompt</ErrorReport>
-        <WarningLevel>4</WarningLevel>
-    </PropertyGroup>
-    <ItemGroup>
-        <Reference Include="0Harmony">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2934420800\Assemblies\0Harmony.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="0PrepatcherAPI">
-          <HintPath>..\..\Prepatcher\Assemblies\0PrepatcherAPI.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="Assembly-CSharp">
-          <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="System" />
-        <Reference Include="System.Core" />
-        <Reference Include="System.Data" />
-        <Reference Include="System.Xml" />
-        <Reference Include="UnityEngine">
-          <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="UnityEngine.CoreModule">
-          <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-        <Reference Include="VFECore">
-          <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.4\Assemblies\VFECore.dll</HintPath>
-          <Private>False</Private>
-        </Reference>
-    </ItemGroup>
-    <ItemGroup>
-        <Compile Include="Core\Abilities\Ability_ShootProjectile.cs" />
-        <Compile Include="Core\Ability.cs" />
-        <Compile Include="Core\AbilityDef.cs" />
-        <Compile Include="Core\AbilityProjectile.cs" />
-        <Compile Include="Core\AbilityUpgrades\AbilityUpgrade.cs" />
-        <Compile Include="Core\AbilityUpgrades\AbilityUpgradeDef.cs" />
-        <Compile Include="Core\AbilityUpgrades\Explosion_AbilityUpgrade.cs" />
-        <Compile Include="Core\AbilityUpgrades\Trackers\AbilityUpgradeTracker.cs" />
-        <Compile Include="Core\AbilityUpgrades\Trackers\ExplosionTracker.cs" />
-        <Compile Include="Core\AbilityUpgrades\Trackers\Tracker.cs" />
-        <Compile Include="Core\AbilityUpgrades\Trackers\TrackerContainer.cs" />
-        <Compile Include="Core\CompAbilities.cs" />
-        <Compile Include="Debug.cs" />
-        <Compile Include="DefOf.cs" />
-        <Compile Include="ModExtensions\AbilityModExtension.cs" />
-        <Compile Include="ModExtensions\AbilityProjectile\IAbilityProjectileModExtension.cs" />
-        <Compile Include="ModExtensions\AbilityProjectile\ScatterBomb.cs" />
-        <Compile Include="Patches\HarmonyPatchStarter.cs" />
-        <Compile Include="Patches\VFECore\Abilities\AbilityDefPatches.cs" />
-        <Compile Include="Patches\VFECore\Abilities\CompAbilitiesPatches.cs" />
-        <Compile Include="RimWorldOfMagic.cs" />
-        <Compile Include="Properties\AssemblyInfo.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <None Include="packages.config" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Abilities\FireMage" />
-    </ItemGroup>
-    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{290CF886-4242-440D-8FDB-AC95A15FE923}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RimWorldOfMagic</RootNamespace>
+    <AssemblyName>RimWorldOfMagic</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <LangVersion>10</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\1.4\Assemblies\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>../Assemblies</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\workshop\content\294100\2934420800\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="0PrepatcherAPI">
+      <HintPath>..\..\Prepatcher\Assemblies\0PrepatcherAPI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="VFECore">
+      <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.4\Assemblies\VFECore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Abilities\Ability_ShootProjectile.cs" />
+    <Compile Include="Core\Ability.cs" />
+    <Compile Include="Core\AbilityDef.cs" />
+    <Compile Include="Core\AbilityProjectile.cs" />
+    <Compile Include="Core\AbilityUpgrades\AbilityUpgrade.cs" />
+    <Compile Include="Core\AbilityUpgrades\AbilityUpgradeDef.cs" />
+    <Compile Include="Core\AbilityUpgrades\Explosion_AbilityUpgrade.cs" />
+    <Compile Include="Core\AbilityUpgrades\Trackers\AbilityUpgradeTracker.cs" />
+    <Compile Include="Core\AbilityUpgrades\Trackers\ExplosionTracker.cs" />
+    <Compile Include="Core\AbilityUpgrades\Trackers\ITracker.cs" />
+    <Compile Include="Core\AbilityUpgrades\Trackers\TrackerContainer.cs" />
+    <Compile Include="Core\CompAbilities.cs" />
+    <Compile Include="Core\InitializeCompAbilities.cs" />
+    <Compile Include="Debug.cs" />
+    <Compile Include="DefOf.cs" />
+    <Compile Include="ModExtensions\AbilityModExtension.cs" />
+    <Compile Include="ModExtensions\AbilityProjectile\IAbilityProjectileModExtension.cs" />
+    <Compile Include="ModExtensions\AbilityProjectile\ScatterBomb.cs" />
+    <Compile Include="Patches\HarmonyPatchStarter.cs" />
+    <Compile Include="RimWorldOfMagic.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Abilities\FireMage\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
          Other similar extension points exist, see Microsoft.Common.targets.
     <Target Name="BeforeBuild">
     </Target>
     <Target Name="AfterBuild">
     </Target>
     -->
-
 </Project>

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using RimWorld;
 using RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
 using Verse;
-using VFECore.Abilities;
-using Ability=RimWorldOfMagic.Core.Ability;
+
+// ReSharper disable UnassignedField.Global
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace RimWorldOfMagic.ModExtensions.AbilityProjectile;
 
@@ -14,7 +14,6 @@ namespace RimWorldOfMagic.ModExtensions.AbilityProjectile;
 public class ScatterBomb : AbilityModExtension, IAbilityProjectileModExtension
 {
     public int quantity;  // Base number of explosions
-    //public IntRange ticksBetweenExplosions = IntRange.zero;  // Waits a random number in range between explosions
     public float power;  // Power of each explosion
     public float radius;
 
@@ -36,36 +35,22 @@ public class ScatterBomb : AbilityModExtension, IAbilityProjectileModExtension
 
     public void PostImpact(Core.AbilityProjectile abilityProjectile, Map map, Thing launcher, ThingDef equipmentDef, Thing hitThing)
     {
-        if (abilityProjectile == null) Log.Error("abilityProjectile is null");
-        if (launcher == null) Log.Error("launcher is null");
-        if (equipmentDef == null) Log.Error("equipmentDef is null");
-        if (hitThing == null) Log.Error("hitThing is null");
-        IntVec3 position = abilityProjectile.Position;
-        Ability ability = abilityProjectile.ability;
-        CellRect cellRect = CellRect.CenteredOn(position, (int)Math.Round(radius));
-
-
+        // Get list of valid cells to spawn explosions on. Exit if none.
+        CellRect cellRect = CellRect.CenteredOn(abilityProjectile.Position, (int)Math.Round(radius));
         cellRect.ClipInsideMap(map);
         List<IntVec3> validCells = new List<IntVec3>();
         foreach (IntVec3 cell in cellRect)
         {
             if (cell.IsValid && !cell.Fogged(map)) validCells.Add(cell);
         }
-
         if (validCells.Count == 0) return;
-        ExplosionTracker tracker = ability.explosionTrackers.GetTracker(upgradeExtensionKey);
-        if (tracker == null) Log.Error("Tracker is null");
-        int finalQuantity = tracker.GetQuantity(quantity);
-        if (finalQuantity <= 0) return;
 
-        // Final stat calculations
-        float modifiedPowerForPawn = ability.CalculateModifiedStatForPawn(
-            power + tracker.powerOffset,
-            ability.def.powerStatFactors,
-            ability.def.powerStatOffsets
-        );
-        float nonRandomPower = modifiedPowerForPawn * tracker.powerMultiplier;
-        AbilityExtension_RandomPowerMultiplier randomPowerExtension = ability.def.GetModExtension<AbilityExtension_RandomPowerMultiplier>();
+        // Final stat calculations. Outside of for loop for optimization
+        ExplosionTracker tracker = abilityProjectile.Ability.explosionTrackers.GetTracker(upgradeExtensionKey);
+        int finalQuantity = tracker.GetQuantity(quantity);
+        if (finalQuantity <= 0) return;  // early exit condition
+
+        int finalPower = tracker.GetPower(power, abilityProjectile.Ability);
         float finalExplosionRadius = tracker.GetExplosionRadius(explosionRadius);
         float finalArmorPenetration = tracker.GetArmorPenetration(armorPenetration);
         float finalPostExplosionSpawnChance = tracker.GetPostExplosionSpawnChance(postExplosionSpawnChance);
@@ -74,16 +59,13 @@ public class ScatterBomb : AbilityModExtension, IAbilityProjectileModExtension
         int finalPreExplosionSpawnThingCount = tracker.GetPreExplosionSpawnThingCount(preExplosionSpawnThingCount);
         float finalChanceToStartFire = tracker.GetChanceToStartFire(chanceToStartFire);
 
+        // Do the explosions!
         for (int i = 0; i < finalQuantity; i++)
         {
             IntVec3 cell = validCells.RandomElement();
-            //FleckMaker.Static(center, map, FleckDefOf.ExplosionFlash);
             GenExplosion.DoExplosion(
                 cell, map, finalExplosionRadius, damageDef, launcher,
-                damAmount: (int)Math.Round(randomPowerExtension != null
-                    ? nonRandomPower * randomPowerExtension.range.RandomInRange
-                    : nonRandomPower
-                ),
+                damAmount: finalPower,
                 armorPenetration: finalArmorPenetration,
                 explosionSound: explosionSound,
                 weapon: equipmentDef,

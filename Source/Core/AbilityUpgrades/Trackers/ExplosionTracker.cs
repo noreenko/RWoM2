@@ -1,4 +1,6 @@
 ﻿using System;
+using Verse;
+using VFECore.Abilities;
 
 namespace RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
 
@@ -6,7 +8,7 @@ namespace RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
  * Tracks upgrades to any kind of explosion. These can be the ability if it is
  * an Ability_ShootProjectile, or tracking a DefModExtension like ScatterBomb
  */
-public class ExplosionTracker : Tracker<Explosion_AbilityUpgradeDef>
+public class ExplosionTracker : ITracker<Explosion_AbilityUpgradeDef>
 {
     public int quantityOffset;  // quantity is included to not have to look up multiple trackers. Not always used.
     public float quantityMultiplier = 1f;
@@ -30,7 +32,18 @@ public class ExplosionTracker : Tracker<Explosion_AbilityUpgradeDef>
     public float chanceToStartFireMultiplier = 1f;
 
     public int GetQuantity(int quantity) => (int)Math.Round((quantity + quantityOffset) * quantityMultiplier);
-    // Power is more complicated and requires info from AbilityDef
+
+    public int GetPower(float power, Ability ability)
+    {
+        power = ability.CalculateModifiedStatForPawn(
+            power + powerOffset,
+            ability.def.powerStatFactors,
+            ability.def.powerStatOffsets
+        );
+        power *= powerMultiplier;
+        var randomPowerExtension = ability.def.GetModExtension<AbilityExtension_RandomPowerMultiplier>();
+        return (int)Math.Round(randomPowerExtension != null ? power * randomPowerExtension.range.RandomInRange : power);
+    }
     public float GetExplosionRadius(float explosionRadius) =>
         (explosionRadius + explosionRadiusOffset) * explosionRadiusMultiplier;
     public float GetArmorPenetration(float armorPenetration) =>

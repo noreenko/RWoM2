@@ -8,12 +8,26 @@ namespace RimWorldOfMagic.Core;
 
 public class AbilityProjectile : VFECore.Abilities.AbilityProjectile
 {
-    public new Ability ability;
+    private new Ability ability;
 
-    public Dictionary<string, ExplosionTracker> explosionTrackers = new();
+    public Ability Ability
+    {
+        get => ability;
+        set
+        {
+            ability = value;
+            base.ability = value;
+        }
+    }
+
+    private Dictionary<string, ExplosionTracker> explosionTrackers;
+    public Dictionary<string, ExplosionTracker> ExplosionTrackers =>
+        explosionTrackers ??= new Dictionary<string, ExplosionTracker>();
 
     protected override void DoImpact(Thing hitThing, Map map)
     {
+        Log.Warning($"hitThing = {hitThing}");
+        Log.Warning($"map = {map}");
         base.DoImpact(hitThing, map);
         foreach (DefModExtension extension in def.modExtensions)
         {

@@ -17,7 +17,9 @@ public class TrackerContainer<TTracker> where TTracker : new()
         }
         catch (KeyNotFoundException)
         {
-            return dictionary[key] = new TTracker();
+            TTracker tracker = new TTracker();
+            dictionary[key] = tracker;
+            return tracker;
         }
     }
 }
