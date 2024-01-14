@@ -15,7 +15,7 @@ public class Ability : VFECore.Abilities.Ability
     public List<AbilityUpgrade> upgrades;
 
     // Trackers
-    public TrackerContainer<ExplosionTracker> explosionTrackers = new();
+    public readonly TrackerContainer<ExplosionTracker, Explosion_AbilityUpgradeDef> explosionTrackers = new();
 
     public override void Init()
     {

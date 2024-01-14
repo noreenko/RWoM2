@@ -2,7 +2,6 @@
 using RimWorldOfMagic.Core.AbilityUpgrades;
 using RimWorldOfMagic.ModExtensions;
 using Verse;
-using VFECore.Abilities;
 
 namespace RimWorldOfMagic.Core;
 

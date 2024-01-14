@@ -69,7 +69,7 @@
     <Compile Include="Core\AbilityProjectile.cs" />
     <Compile Include="Core\AbilityUpgrades\AbilityUpgrade.cs" />
     <Compile Include="Core\AbilityUpgrades\AbilityUpgradeDef.cs" />
-    <Compile Include="Core\AbilityUpgrades\Explosion_AbilityUpgrade.cs" />
+    <Compile Include="Core\AbilityUpgrades\Explosion_AbilityUpgradeDef.cs" />
     <Compile Include="Core\AbilityUpgrades\Trackers\AbilityUpgradeTracker.cs" />
     <Compile Include="Core\AbilityUpgrades\Trackers\ExplosionTracker.cs" />
     <Compile Include="Core\AbilityUpgrades\Trackers\ITracker.cs" />
