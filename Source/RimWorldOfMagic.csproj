@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>portable</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\1.4\Assemblies\</OutputPath>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -27,7 +27,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>../Assemblies</OutputPath>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -35,10 +35,6 @@
   <ItemGroup>
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\..\workshop\content\294100\2934420800\Assemblies\0Harmony.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="0PrepatcherAPI">
-      <HintPath>..\..\Prepatcher\Assemblies\0PrepatcherAPI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Assembly-CSharp">
@@ -57,8 +53,8 @@
       <HintPath>..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="VFECore">
-      <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.4\Assemblies\VFECore.dll</HintPath>
+    <Reference Include="VEF">
+      <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\VEF.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>

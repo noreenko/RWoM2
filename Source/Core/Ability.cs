@@ -5,11 +5,11 @@ using RimWorld.Planet;
 using RimWorldOfMagic.Core.AbilityUpgrades;
 using RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
 using Verse;
-using VFECore.Abilities;
+using VEF.Abilities;
 
 namespace RimWorldOfMagic.Core;
 
-public class Ability : VFECore.Abilities.Ability
+public class Ability : VEF.Abilities.Ability
 {
     public new AbilityDef def;
     public List<AbilityUpgrade> upgrades;
@@ -19,7 +19,7 @@ public class Ability : VFECore.Abilities.Ability
 
     public override void Init()
     {
-        base.def = def;  // We use new to refer to our def, but base Ability still needs def set to VFECore.AbilityDef
+        base.def = def;  // We use new to refer to our def, but base Ability still needs def set to VEF.AbilityDef
         base.Init();
         upgrades ??= new List<AbilityUpgrade>();
         foreach (AbilityUpgradeDef abilityUpgradeDef in def.abilityUpgradeDefs)

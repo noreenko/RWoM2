@@ -1,6 +1,6 @@
 ﻿using System;
 using Verse;
-using VFECore.Abilities;
+using VEF.Abilities;
 
 namespace RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
 

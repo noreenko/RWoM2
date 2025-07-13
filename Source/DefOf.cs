@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Verse;
-using VFECore.Abilities;
+using VEF.Abilities;
 
 namespace RimWorldOfMagic;
 

@@ -5,7 +5,7 @@ using Verse;
 
 namespace RimWorldOfMagic.Core;
 
-public class AbilityDef : VFECore.Abilities.AbilityDef
+public class AbilityDef : VEF.Abilities.AbilityDef
 {
     public List<AbilityUpgradeDef> abilityUpgradeDefs;
 

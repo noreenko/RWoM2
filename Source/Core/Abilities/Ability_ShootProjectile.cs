@@ -1,13 +1,13 @@
 ﻿using RimWorld.Planet;
 using Verse;
-using VFECore.Abilities;
+using VEF.Abilities;
 
 namespace RimWorldOfMagic.Core.Abilities;
 
 /*
- * Near Identical in function to VFECore.Abilities.Abilities.Ability_ShootProjectile.
+ * Near Identical in function to VEF.Abilities.Abilities.Ability_ShootProjectile.
  * Unfortunately C# doesn't allow multiple inheritance, so we duplicate the code here instead of patching Ability which
- * would affect other mods using VFECore.Abilities
+ * would affect other mods using VEF.Abilities
  */
 public class Ability_ShootProjectile : Ability
 {

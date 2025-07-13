@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using AnimalBehaviours;
 using RimWorld.Planet;
 using Verse;
-using VFECore.Abilities;
+using VEF.Abilities;
+using VEF.AnimalBehaviours;
 
 namespace RimWorldOfMagic.Core;
 
 /*
- * Note: This is a heavily cut version of CompAbilities from VFECore. A lot of the code is copy-pasted from there.
+ * Note: This is a heavily cut version of CompAbilities from VEF. A lot of the code is copy-pasted from there.
  *
  */
 public class CompAbilities : ThingComp, PawnGizmoProvider

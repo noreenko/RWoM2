@@ -6,7 +6,7 @@ using Verse;
 
 namespace RimWorldOfMagic.Core;
 
-public class AbilityProjectile : VFECore.Abilities.AbilityProjectile
+public class AbilityProjectile : VEF.Abilities.AbilityProjectile
 {
     private new Ability ability;
 
