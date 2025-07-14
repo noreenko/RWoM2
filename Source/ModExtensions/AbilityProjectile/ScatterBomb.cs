@@ -45,7 +45,7 @@ public class ScatterBomb : AbilityModExtension, IAbilityProjectileModExtension
         }
         if (validCells.Count == 0) return;
 
-        // Final stat calculations. Outside of for loop for optimization
+        // Final stat calculations. Outside for loop for optimization
         ExplosionTracker tracker = abilityProjectile.Ability.explosionTrackers.GetTracker(upgradeExtensionKey);
         int finalQuantity = tracker.GetQuantity(quantity);
         if (finalQuantity <= 0) return;  // early exit condition

@@ -6,10 +6,11 @@ using RimWorldOfMagic.Core.AbilityUpgrades;
 using RimWorldOfMagic.Core.AbilityUpgrades.Trackers;
 using Verse;
 using VEF.Abilities;
+using VEFAbilityUpgradeFramework;
 
 namespace RimWorldOfMagic.Core;
 
-public class Ability : VEF.Abilities.Ability
+public class Ability : UpgradableAbility
 {
     public new AbilityDef def;
     public List<AbilityUpgrade> upgrades;

@@ -1,24 +1,18 @@
 ﻿using System.Collections.Generic;
 using RimWorldOfMagic.Core.AbilityUpgrades;
 using RimWorldOfMagic.ModExtensions;
+using VEFAbilityUpgradeFramework;
 using Verse;
 
 namespace RimWorldOfMagic.Core;
 
-public class AbilityDef : VEF.Abilities.AbilityDef
+public class AbilityDef : UpgradableAbilityDef
 {
-    public List<AbilityUpgradeDef> abilityUpgradeDefs;
-
-    public override void ResolveReferences()
+    public AbilityDef(): base() {}
+    
+    // Copy constructor from base class
+    public AbilityDef(AbilityDef def, Ability upgradableAbility)
+        : base(def, upgradableAbility)
     {
-        base.ResolveReferences();
-        abilityUpgradeDefs ??= new List<AbilityUpgradeDef>();
-
-        if (modExtensions == null) return;
-        foreach (DefModExtension modExtension in modExtensions)
-        {
-            if (modExtension is AbilityModExtension abilityModExtension)
-                abilityModExtension.abilityDef = this;
-        }
     }
 }

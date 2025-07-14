@@ -23,6 +23,9 @@ public class CompAbilities : ThingComp, PawnGizmoProvider
 
     public Ability  currentlyCasting;
     public GlobalTargetInfo[] currentlyCastingTargets;
+    
+    private bool isMagic = false;
+    public bool IsMagic => isMagic;
 
     public override void PostSpawnSetup(bool respawningAfterLoad)
     {

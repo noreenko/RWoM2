@@ -22,7 +22,7 @@
     </projectile>
     <modExtensions>
             <li Class="RimWorldOfMagic.ModExtensions.AbilityProjectile.ScatterBomb">
-                <upgradeExtensionKey>scatterBomb</upgradeExtensionKey>
+                <upgradeExtensionKey>RWoM_Projectile_Fireball_scatterBomb</upgradeExtensionKey>
                 <quantity>5</quantity>
                 <power>1</power>
                 <radius>4</radius>

@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using VEFAbilityUpgradeFramework;
+using Verse;
 
 namespace RimWorldOfMagic.Core.AbilityUpgrades;
 

@@ -1,4 +1,5 @@
-﻿using Verse;
+﻿using VEFAbilityUpgradeFramework;
+using Verse;
 
 namespace RimWorldOfMagic.Core.AbilityUpgrades;
 
@@ -23,7 +24,7 @@ public class AbilityUpgrade : IExposable
         // TODO: Find point system and subtract points
         // if that succeeded:
         Unlock();
-        foreach (AbilityUpgradeDef additionalDef in def.additionalUpgrades)
+        foreach (AbilityUpgradeDef additionalDef in def.additionalUpgradeDefsToUnlock)
         {
             foreach (AbilityUpgrade upgrade in ability.upgrades)
             {

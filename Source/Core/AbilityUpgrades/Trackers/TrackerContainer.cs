@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using VEFAbilityUpgradeFramework;
 using Verse;
 
 namespace RimWorldOfMagic.Core.AbilityUpgrades.Trackers;

@@ -57,6 +57,9 @@
       <HintPath>..\..\..\..\..\workshop\content\294100\2023507013\1.6\Assemblies\VEF.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="VEFAbilityUpgradeFramework">
+      <HintPath>..\..\RimworldVEFAbilityUpgradeFramework-main\1.6\Assemblies\VEFAbilityUpgradeFramework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Abilities\Ability_ShootProjectile.cs" />
@@ -72,11 +75,13 @@
     <Compile Include="Core\AbilityUpgrades\Trackers\TrackerContainer.cs" />
     <Compile Include="Core\CompAbilities.cs" />
     <Compile Include="Core\InitializeCompAbilities.cs" />
+    <Compile Include="Core\ITabMagic.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="DefOf.cs" />
     <Compile Include="ModExtensions\AbilityModExtension.cs" />
     <Compile Include="ModExtensions\AbilityProjectile\IAbilityProjectileModExtension.cs" />
     <Compile Include="ModExtensions\AbilityProjectile\ScatterBomb.cs" />
+    <Compile Include="ModExtensions\ManaModExtension.cs" />
     <Compile Include="Patches\HarmonyPatchStarter.cs" />
     <Compile Include="RimWorldOfMagic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
