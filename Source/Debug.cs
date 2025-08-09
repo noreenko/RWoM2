@@ -31,7 +31,7 @@ public class Debug
                     method: () =>
                        {
                            Log.Warning($"abilityDef = {abilityDef}");
-                           foreach (Pawn pawn in Find.CurrentMap.thingGrid.ThingsAt(UI.MouseCell()).OfType<Pawn>())
+                           foreach (Pawn pawn in Find.CurrentMap.thingGrid.ThingsAt(Verse.UI.MouseCell()).OfType<Pawn>())
                            {
                                CompAbilities abilityComp = pawn.TryGetComp<CompAbilities>();
                                if (abilityComp != null)

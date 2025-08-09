@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <!-- First create inspectorTabs nodes for humanlike races that don't have them -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[race/intelligence="Humanlike" and not(inspectorTabs)]</xpath>
+        <value>
+            <inspectorTabs />
+        </value>
+    </Operation>
+
+    <!-- Then add our inspector tab to all humanlike races -->
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[race/intelligence="Humanlike"]/inspectorTabs</xpath>
+        <value>
+            <li>RimWorldOfMagic.UI.ITabMagic</li>
+        </value>
+    </Operation>
+</Patch>
