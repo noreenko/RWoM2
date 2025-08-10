@@ -88,12 +88,16 @@
     <Compile Include="RimWorldOfMagic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\ITabMagic.cs" />
+    <Compile Include="UI\ITabUtils.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abilities\FireMage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoadFolders.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <RimWorldOfMagic_Settings_AbilityTabSettings>Ability Tab Settings</RimWorldOfMagic_Settings_AbilityTabSettings>
+    <RimWorldOfMagic_Settings_AbilityTabSettingsTooltip>
+        This section controls the settings for the ability tabs such as Magic and Might when you inspect a pawn.
+    </RimWorldOfMagic_Settings_AbilityTabSettingsTooltip>
+    <RimWorldOfMagic_Settings_AbilityTabWidth>Ability Tab Width</RimWorldOfMagic_Settings_AbilityTabWidth>
+    <RimWorldOfMagic_Settings_AbilityTabHeight>Ability Tab Height</RimWorldOfMagic_Settings_AbilityTabHeight>
+</LanguageData>

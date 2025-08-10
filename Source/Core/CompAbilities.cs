@@ -49,6 +49,7 @@ public class CompAbilities : ThingComp, PawnGizmoProvider
             abilitiesToTick.Add(ability);
         }
         learnedAbilities = LearnedAbilities.OrderBy(static ability => ability.def.label).ToList();
+        IsMagic = true;  // TODO This should actually calculate
     }
 
     public bool HasAbility(AbilityDef abilityDef)
